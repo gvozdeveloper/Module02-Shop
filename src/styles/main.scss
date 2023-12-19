@@ -253,9 +253,23 @@ body {
     display: inline-block;
 }
 .offer {
-    background-image: url(../images/main.png);
+    background-image: url(../images/offer.png);
     background-size: cover;
     background-position-x: center;
     background-repeat: no-repeat;
     padding-top: 2rem;
+    padding-bottom: 6rem;
+    &__text {
+        margin-top: 6rem;
+        max-width: 70rem;
+    }
+    &__slider {
+        overflow: hidden;
+    }
+}
+.swiper {
+    overflow: hidden;
+    &-slide {
+        border: 1px solid $green;
+    }
 }

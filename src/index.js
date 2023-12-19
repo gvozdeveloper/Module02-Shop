@@ -1,15 +1,19 @@
-import 'normalize.css'
-import './styles/main.scss';
-
-import Swiper, { Navigation, Pagination } from 'swiper';
+import 'normalize.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
+import './styles/main.scss';
+
+import { Navigation, Pagination } from 'swiper/modules';
+
+
+var swiper = new Swiper(".offerSwiper", {
+    slidesPerView: 3,
     spaceBetween: 30,
+    slidesPerGroup: 3,
     loop: true,
+    loopFillGroupWithBlank: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -18,4 +22,5 @@ var swiper = new Swiper(".mySwiper", {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    modules: [Navigation, Pagination],
   });
