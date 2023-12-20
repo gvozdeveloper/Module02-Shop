@@ -272,19 +272,66 @@ body {
     overflow: initial;
     &-slide {
         border: 1px solid $green;
-        border-radius: 1.5rem;
+        border-radius: 2rem;
+        padding: 4rem 3.7rem;
+        box-sizing: border-box;
+        height: 52rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        &__title {
+            font-family: $font-cormorant;
+            font-size: 3rem;
+            color: $green;
+            margin-bottom: 1rem;
+        }
+        &__text {
+            color: rgba($green, 0.7);
+            line-height: 1.5;
+            margin-bottom: 3.4rem;
+            min-width: 263px;
+        }
+        &__link {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
+            color: rgba($green, 0.8);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            letter-spacing: 0.1rem;
+            &::before {
+                content: '';
+                display: block;
+                width: 3rem;
+                height: 3rem;
+                background-image: url(../images/plus.svg);
+                background-image: cover;
+                background-repeat: no-repeat;
+                opacity: .8;
+            }
+        }
     }
     &-pagination {
         display: none;
     }
     &-button-next, &-button-prev {
         top: -6rem;
-        &::after {
-            color: $green;
+        &:hover {
+            &::after {
+                color: rgba($green, 1);
+            }
         }
+        &::after {
+            color: rgba($green, .4);
+            font-size: 2rem;
+        }
+    }
+    &-button-next {
+        right: -.8rem;
     }
     &-button-prev {
         left: initial;
-        right: 10rem;
+        right: 7.2rem;
     }
 }
