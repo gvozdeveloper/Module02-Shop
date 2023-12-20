@@ -265,11 +265,26 @@ body {
     }
     &__slider {
         overflow: hidden;
+        padding-top: 10rem;
     }
 }
 .swiper {
-    overflow: hidden;
+    overflow: initial;
     &-slide {
         border: 1px solid $green;
+        border-radius: 1.5rem;
+    }
+    &-pagination {
+        display: none;
+    }
+    &-button-next, &-button-prev {
+        top: -6rem;
+        &::after {
+            color: $green;
+        }
+    }
+    &-button-prev {
+        left: initial;
+        right: 10rem;
     }
 }
