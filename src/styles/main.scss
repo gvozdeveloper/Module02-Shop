@@ -250,6 +250,11 @@ body {
     text-decoration: none;
     border-radius: 3.8rem;
     display: inline-block;
+    &_min {
+        font-size: 1.4rem;
+        padding: 2rem 3.4rem;
+        box-shadow: 0px 1rem 1.1rem .17rem rgba(207, 92, 13, 0.15);
+    }
 }
 .offer {
     background-image: url(../images/offer.png);
@@ -327,7 +332,11 @@ body {
         &__description {
             font-size: 1.8rem;
             color: rgba($green, 0.7);
-            width: 25.3rem;
+            min-height: 5.5rem;
+            max-width: 30rem;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            line-height: 1.5;
         }
         &__price {
             font-size: 2.4rem;
@@ -375,6 +384,9 @@ body {
         }
         &__image {
             height: 100%;
+            width: 100%;
+            max-width: 35.1rem;
+            object-fit: contain;
        }
         &__footer {
             display: flex;
@@ -416,6 +428,10 @@ body {
         padding: 0;
         background-position: center center;
         border-radius: 100%;
+        &_min {
+            width: 4rem;
+            height: 4rem;
+        }
     }
     &__minus {
         pointer-events: none;
@@ -436,6 +452,9 @@ body {
         width: 4.6rem;
         border: none;
         padding: 0;
+        &_min {
+            width: 3.3rem;
+        }
     }
 }
 .about {
@@ -503,21 +522,102 @@ body {
     }
 }
 .catalog {
-    &__text {
-        margin-top: 6rem;
-    }
     &__list {
+        margin-top: 8.5;
+        margin-bottom: 5rem;
+    }
+    &__bth {
+        margin-top: 6rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $green;
         display: flex;
-        list-style: none;
+        align-items: center;
         gap: 2rem;
-        margin-top: 9rem;
-        padding: 0;
+        letter-spacing: 0.1rem;
+        opacity: .8;
+        background-image: url(../images/refresh.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 3rem;
+        height: 3rem;
+        
+    }
+}
+.category {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    &__item {
+        flex-basis: 23rem;
         text-align: center;
     }
-    &__items {
-        width: 23rem;
-        border: 1px solid $green;
-        border-radius: 35px;
-        padding: 3rem auto;
+    &__link {
+        padding: 2.4rem 0;
+        border: 1px solid rgba($green, .5);
+        color: rgba($green, .5);
+        font-size: 1.8rem;
+        text-decoration: none;
+        border-radius: 4rem;
+        display: block;
+        &:hover {
+            border: 1px solid $orange;
+            color: $orange;
+        }
+    }
+}
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    &__item {
+        border: 1px solid rgba($green, .4);
+        border-radius: 2rem;
+        padding: 2.7rem 3rem 3.8rem;
+        box-sizing: border-box;
+        &:hover {
+            box-shadow: 0 0 0 2px rgba($green, .4) inset;
+        }
+    }
+    &__cover {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 20.4rem;
+        text-align: center;
+    }
+    &__image {
+        width: 100%;
+        max-width: 35.1rem;
+        height: 100%;
+        object-fit: contain;
+    }
+    &__title {
+        font-family: $font-cormorant;
+        font-size: 3rem;
+        color: $green;
+        margin-top: 1.7rem;
+        margin-bottom: 0;
+    }
+    &__description {
+        font-size: 1.6rem;
+        color: rgba($green, .7);
+        margin-top: 1.8rem;
+        margin-bottom: 0;
+        min-height: 6.1rem;
+        max-width: 30rem;
+        line-height: 1.5;
+    }
+    &__price {
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+        margin-top: 0;
+    }
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
