@@ -523,25 +523,32 @@ body {
 }
 .catalog {
     &__list {
-        margin-top: 8.5;
+        margin-top: 8.5rem;
         margin-bottom: 5rem;
     }
     &__bth {
-        margin-top: 6rem;
-        text-transform: uppercase;
         font-weight: 500;
-        color: $green;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #27300f;
         display: flex;
         align-items: center;
-        gap: 2rem;
-        letter-spacing: 0.1rem;
+        gap: 1.3rem;
+        letter-spacing: .1rem;
         opacity: .8;
-        background-image: url(../images/refresh.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 3rem;
-        height: 3rem;
-        
+        background-color: transparent;
+        border: none;
+        margin: 5.7rem auto 0;
+        padding: 0;
+        cursor: pointer;
+        &::before {
+            content: '';
+            width: 2.3rem;
+            height: 2.3rem;
+            background-image: url(../images/refresh.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
     }
 }
 .category {
@@ -619,5 +626,177 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+}
+.delivery {
+    margin-top: 17.4rem;
+    padding-bottom: 10rem;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 7rem;
+        gap: 11%;
+        margin-left: 12rem;
+    }
+    &__text {
+        flex-basis: 44%;
+    }
+    &__description {
+        margin: 0;
+        margin-bottom: 4.5rem;
+        font-size: 1.8rem;
+    }
+    &__link {
+        color: $green;
+    }
+    &__payment {
+        flex-basis: 37%;
+    }
+    &__color {
+        color: #d26a22;
+    }
+    &__list {
+        display: flex;
+        margin-top: 4.3rem;
+        padding-left: 0;
+        list-style-type: none;
+        gap: 3rem
+    }
+    &__item {
+        height: 32px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: .4;
+        transform: scale(1);
+        transition: .2s;
+        cursor: pointer;
+        &:hover {
+            opacity: 1;
+            transform: scale(1.05)
+        }
+    }
+    &__mc {
+        background-image: url(../images/mastercard.svg);
+        width: 53px;
+    }
+    &__visa {
+        background-image: url(../images/visa.svg);
+        width: 74px;
+    }
+    &__paypal {
+        background-image: url(../images/paypal.svg);
+        width: 87px;
+    }
+}
+.contact {
+    adding-top: 40px;
+    padding-bottom: 161px;
+
+}
+.contact-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__text {
+        margin-left: 12rem;
+        max-width: 385px;
+        margin-top: 5.5rem;
+    }
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 6rem;
+    }
+    &__tel {
+        text-decoration: none;
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: $green;
+        display: flex;
+        align-items: center;
+        gap: 3.4rem;
+        letter-spacing: 0;
+        padding-bottom: 1.8rem;
+        &::before {
+            content: '';
+            display: block;
+            background-image: url(../images/phone.svg);
+            background-repeat: no-repeat;
+            width: 3rem;
+            height: 3rem;
+        }
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__mail {
+        text-decoration: none;
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: $green;
+        display: flex;
+        align-items: center;
+        gap: 3.4rem;
+        letter-spacing: 0;
+        padding-bottom: 1.8rem;
+        &::before {
+            content: '';
+            display: block;
+            background-image: url(../images/mail.svg);
+            background-repeat: no-repeat;
+            width: 3rem;
+            height: 3rem;
+        }
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__form {
+        flex-basis: 589px;
+    }
+}
+.card {
+    border: 2px solid rgba(39,48,15, .4);
+    border-radius: 2rem;
+    padding: 3.2rem 5.8rem 4rem;
+    &__title {
+        font-size: 30px;
+        font-family: $font-cormorant;
+        margin-top: 0;
+    }
+    &__label {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        display: block;
+        margin-left: 6px;
+    }
+    &__input {
+        border: 1px solid rgba(39,48,15,.4);
+        padding: 2.2rem 3rem;
+        margin-bottom: 2.8rem;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 2rem;
+    }
+    &__link {
+        margin-top: 1.2rem;
+    }
+    &__check {
+        font-size: 12px;
+        color: rgba(39,48,15,.6);
+        line-height: 1.5;
+        max-width: 360px;
+        margin-top: 1.6rem;
+        margin-bottom: 0;
+    }
+    &__docs {
+        text-decoration: none;
+        color: rgba($green, .6);
+        border-bottom: 1px solid #ecedec;
+        &:hover {
+            color: rgba($green, 1);
+        }
     }
 }
