@@ -250,6 +250,9 @@ body {
     text-decoration: none;
     border-radius: 3.8rem;
     display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
     &_min {
         font-size: 1.4rem;
         padding: 2rem 3.4rem;
@@ -633,10 +636,12 @@ body {
     padding-bottom: 10rem;
     &__box {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         margin-top: 7rem;
         gap: 11%;
         margin-left: 12rem;
+        font-size: 1.8rem;
+        line-height: 1.5;
     }
     &__text {
         flex-basis: 44%;
@@ -689,73 +694,87 @@ body {
     }
 }
 .contact {
-    adding-top: 40px;
-    padding-bottom: 161px;
+    padding-top: 4rem;
+    padding-bottom: 16.1rem;
+    &-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__text {
+            margin-left: 12rem;
+            max-width: 385px;
+            margin-top: 5.5rem;
+        }
+        &__list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 0;
+            margin-top: 6rem;
+        }
+        &__link {
+            font-size: 24px;
+            text-decoration: none;
+            color: #27300f;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            &::before {
+                content: "";
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 29px;
+                height: 30px;
+                display: block;
+            }
+        }
+        &__tel {
+            text-decoration: none;
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: $green;
+            display: flex;
+            align-items: center;
+            gap: 3.4rem;
+            letter-spacing: 0;
+            padding-bottom: 1.8rem;
+            &::before {
+                background-image: url(../images/phone.svg);
+                background-repeat: no-repeat;
+           }
+            &:hover {
+                color: $orange;
+            }
+        }
+        &__mail {
+            text-decoration: none;
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: $green;
+            display: flex;
+            align-items: center;
+            gap: 3.4rem;
+            letter-spacing: 0;
+            padding-bottom: 1.8rem;
+            &::before {
+                content: '';
+                display: block;
+                background-image: url(../images/mail.svg);
+                background-repeat: no-repeat;
+                width: 3rem;
+                height: 3rem;
+            }
+            &:hover {
+                color: $orange;
+            }
+        }
+        &__form {
+            flex-basis: 589px;
+        }
+    
+    }
+}
 
-}
-.contact-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    &__text {
-        margin-left: 12rem;
-        max-width: 385px;
-        margin-top: 5.5rem;
-    }
-    &__list {
-        list-style-type: none;
-        padding: 0;
-        margin-bottom: 0;
-        margin-top: 6rem;
-    }
-    &__tel {
-        text-decoration: none;
-        font-size: 2.4rem;
-        font-weight: 500;
-        color: $green;
-        display: flex;
-        align-items: center;
-        gap: 3.4rem;
-        letter-spacing: 0;
-        padding-bottom: 1.8rem;
-        &::before {
-            content: '';
-            display: block;
-            background-image: url(../images/phone.svg);
-            background-repeat: no-repeat;
-            width: 3rem;
-            height: 3rem;
-        }
-        &:hover {
-            color: $orange;
-        }
-    }
-    &__mail {
-        text-decoration: none;
-        font-size: 2.4rem;
-        font-weight: 500;
-        color: $green;
-        display: flex;
-        align-items: center;
-        gap: 3.4rem;
-        letter-spacing: 0;
-        padding-bottom: 1.8rem;
-        &::before {
-            content: '';
-            display: block;
-            background-image: url(../images/mail.svg);
-            background-repeat: no-repeat;
-            width: 3rem;
-            height: 3rem;
-        }
-        &:hover {
-            color: $orange;
-        }
-    }
-    &__form {
-        flex-basis: 589px;
-    }
-}
 .card {
     border: 2px solid rgba(39,48,15, .4);
     border-radius: 2rem;
@@ -795,6 +814,101 @@ body {
         text-decoration: none;
         color: rgba($green, .6);
         border-bottom: 1px solid #ecedec;
+        &:hover {
+            color: rgba($green, 1);
+        }
+    }
+}
+footer {
+    padding-top: 7.9rem;
+    padding-bottom: 7rem;
+    border-top: 1px solid #e2e3df;
+}
+.footer {
+    background-image: url(../images/footer.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.8rem;
+    }
+    &__info {
+        flex-basis: 66.2%;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__list {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    &__item {
+        margin-bottom: 2.6rem;
+    }
+    &__link {
+        text-decoration: none;
+        color: $green;
+        transition: .2s;
+        &:hover {
+            color: $orange
+        }
+    }
+    &__tel {
+        display: block;
+        font-size: 24px;
+        text-decoration: none;
+        color: $green;
+        font-weight: 500;
+        margin-bottom: 3rem;
+    }
+    &-social {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 0;
+        margin-top: 3rem;
+        margin-bottom: 0;
+        &__link {
+            display: block;
+            width: 4.6rem;
+            height: 4.6rem;
+            border: 2px solid $green;
+            border-radius: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: .7;
+            transition: .2s;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        &__vk {
+            background-image: url(../images/vk.svg);
+            background-size: 2.3rem;
+        }
+        &__inst {
+            background-image: url(../images/instagram.svg);
+            background-size: 1.8rem;
+        }
+        &__fb {
+            background-image: url(../images/facebook.svg);
+            background-size: 1.8rem;
+        }
+    }
+    &__text {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.6rem;
+        color: rgba(39,48,15,.6);
+        margin-top: 4rem;
+    }
+    &__author {
+        color: rgba($green, .6);
+        text-decoration: none;
+        transition: .2s;
         &:hover {
             color: rgba($green, 1);
         }
