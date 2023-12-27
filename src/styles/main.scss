@@ -24,7 +24,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    gap: 8rem;
+    &__navigation {
+        flex-grow: 1;
+    }
     &__nav {
         display: flex;
         list-style-type: none;
@@ -45,6 +48,7 @@ body {
         color: $green;
         font-weight: 500;
         text-decoration: none;
+        flex-basis: 140px;
         &:hover {
             color: $orange;
         }
@@ -139,6 +143,8 @@ body {
     }
     &__image {
         width: 92%;
+        border-radius: 100%;
+        animation: shadow 5s linear infinite;
     }
     &__bth {
         background-color: transparent;
@@ -919,4 +925,17 @@ footer {
             color: rgba($green, 1);
         }
     }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+    50% {
+        box-shadow: 20px 20px 33px 0 rgba($green, .5);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($green, .5);
+    }
+
 }
