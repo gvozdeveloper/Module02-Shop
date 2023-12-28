@@ -13,9 +13,11 @@ $r_mob_400: 400px;
 $r_mob_500: 500px;
 $r_mob_600: 600px;
 $r_tab: 768px;
+$r_tab_900: 900px;
 $r_desk: 1000px;
 $r_desk_hd: 1200px;
 $r_desk_1280: 1280px;
+$r_desk_1350: 1350px;
 
 
 html {
@@ -46,6 +48,12 @@ body {
         @media(max-width: $r_desk_1280) {
             margin-left: 0;
         }
+        @media(max-width: $r_desk_hd) {
+            flex-grow: 0;
+        }
+        @media(max-width: $r_tab_900) {
+            display: none;
+        }
     }
     &__nav {
         display: flex;
@@ -53,6 +61,9 @@ body {
         margin: 0;
         padding-left: 0;
         gap: 4.8rem;
+        @media(max-width: $r_desk_hd) {
+            gap: 2.5rem;
+        }
     }
     &__link {
         font-size: 1.6rem;
@@ -90,10 +101,21 @@ body {
         padding: 0;
         transition: .2s;
         cursor: pointer;
+        @media(max-width: $r_desk_hd) {
+            background-color: $white;
+            background-image: url('../images/cart-mobi.svg');
+            border: 1px solid $green;
+            opacity: .8;
+        }
         &:hover {
             background-color: $green;
             border: 1px solid $green;
+            @media(max-width: $r_desk_hd) {
+                background-color: $white;
+                opacity: 1;
+            }
         }
+        
     }
     &__counter {
         font-size: .8rem;
@@ -101,6 +123,9 @@ body {
         position: absolute;
         right: 1rem;
         top: .6rem;
+        @media(max-width: $r_desk_hd) {
+            color: $green;
+        }
     }
     &__phone, &__menu {
         display: none;
@@ -119,7 +144,32 @@ body {
             position: relative;
             border: 1px solid $green;
             padding: 0;
+            opacity: .8;
             transition: .2s;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__menu {
+        @media(max-width: $r_tab_900) {
+            display: block;
+            width: 3.8rem;
+            height: 3.8rem;
+            border-radius: 100%;
+            background-color: $white;
+            background-image: url('../images/menu.svg');
+            background-repeat: no-repeat;
+            background-size: 1.7rem 1.5rem;
+            background-position: center center;
+            position: relative;
+            border: 1px solid $green;
+            padding: 0;
+            opacity: .8;
+            transition: .2s;
+        }
+        &:hover {
+            opacity: 1;
         }
     }
     &__buttons {
@@ -162,6 +212,9 @@ body {
         margin-left: 12rem;
         max-width: 37.8rem;
         margin-top: 6rem;
+        @media (max-width: $r_desk_1280) {
+            margin-left: 8rem;
+        }
     }
     &__link {
         margin-top: 6rem;
@@ -182,6 +235,14 @@ body {
         justify-content: center;
         align-items: center;
         position: relative;
+        @media (max-width: $r_desk_1350) {
+            flex-basis: 650px;
+            height: 650px;
+        }
+        @media (max-width: $r_desk_hd) {
+            flex-basis: 600px;
+            height: 600px;
+        }
     }
     &__line {
         width: 658px;
@@ -192,6 +253,15 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @media (max-width: $r_desk_1350) {
+            width: 600px;
+            height: 600px;
+        }
+        @media (max-width: $r_desk_hd) {
+            border: 1px solid transparent;
+            width: auto;
+            height: auto;
+        }
     }
     &__image {
         width: 92%;
@@ -225,6 +295,13 @@ body {
         &_1 {
             top: 53px;
             left: 70px;
+            @media (max-width: $r_desk_1350) {
+                top: 27px;
+            }
+            @media (max-width: $r_desk_hd) {
+                top: 27px;
+                left: 55px;
+            }
             &::before {
                 bottom: 11px;
                 right: -30px;
@@ -233,6 +310,12 @@ body {
         &_2 {
             top: 200px;
             right: -3px;
+            @media (max-width: $r_desk_1350) {
+                top: 110px;
+            }
+            @media (max-width: $r_desk_hd) {
+                top: 60px;
+            }
             &::before {
                 bottom: 11px;
                 right: 93px;
@@ -241,6 +324,9 @@ body {
         &_3 {
             bottom: -43px;
             right: 250px;
+            @media (max-width: $r_desk_1350) {
+                bottom: -55px;
+            }
             &::before {
                 bottom: 50px;
                 right: 30px;
@@ -287,6 +373,9 @@ body {
     font-weight: 700;
     font-size: 8rem;
     margin: 0;
+    @media (max-width: $r_desk_1280) {
+        font-size: 7rem;
+    }
     &__span {
         font-style: italic;
     }
@@ -300,9 +389,15 @@ body {
     margin: 0;
     &_size-s {
         font-size: 1.8rem;
+        @media (max-width: $r_desk_1280) {
+            font-size: 1.6rem;
+        }
     }
     &_size-m {
         font-size: 2.4rem;
+        @media (max-width: $r_desk_1280) {
+            font-size: 2.2rem;
+        }
     }
 }
 .link {
@@ -316,7 +411,10 @@ body {
     display: inline-block;
     border: none;
     cursor: pointer;
-    transition: .3s;
+    transition: .2s;
+    @media (max-width: $r_desk_1280) {
+        font-size: 1.4rem;
+    }
     &_min {
         font-size: 1.4rem;
         padding: 2rem 3.4rem;
