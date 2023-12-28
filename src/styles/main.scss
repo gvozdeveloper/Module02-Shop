@@ -7,6 +7,17 @@ $white: #fff;
 $font-jost: 'Jost', sans-serif;
 $font-cormorant: 'Cormorant', serif;
 
+$r_minmob: 320px;
+$r_mob_360: 360px;
+$r_mob_400: 400px;
+$r_mob_500: 500px;
+$r_mob_600: 600px;
+$r_tab: 768px;
+$r_desk: 1000px;
+$r_desk_hd: 1200px;
+$r_desk_1280: 1280px;
+
+
 html {
     font-size: 10px;
 }
@@ -24,9 +35,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8rem;
+    gap: 5%;
+    @media(max-width: $r_desk_1280) {
+        gap: 3%;
+    }
+
     &__navigation {
         flex-grow: 1;
+        margin-left: 4.5rem;
+        @media(max-width: $r_desk_1280) {
+            margin-left: 0;
+        }
     }
     &__nav {
         display: flex;
@@ -52,6 +71,9 @@ body {
         &:hover {
             color: $orange;
         }
+        @media(max-width: $r_desk_hd) {
+            display: none;
+        }
     }
     &__cart {
         display: block;
@@ -65,6 +87,9 @@ body {
         background-position: center center;
         position: relative;
         border: 1px solid $orange;
+        padding: 0;
+        transition: .2s;
+        cursor: pointer;
         &:hover {
             background-color: $green;
             border: 1px solid $green;
@@ -76,6 +101,33 @@ body {
         position: absolute;
         right: 1rem;
         top: .6rem;
+    }
+    &__phone, &__menu {
+        display: none;
+    }
+    &__phone {
+        @media(max-width: $r_desk_hd) {
+            display: block;
+            width: 3.8rem;
+            height: 3.8rem;
+            border-radius: 100%;
+            background-color: $white;
+            background-image: url('../images/tel.svg');
+            background-repeat: no-repeat;
+            background-size: 1.7rem 1.5rem;
+            background-position: center center;
+            position: relative;
+            border: 1px solid $green;
+            padding: 0;
+            transition: .2s;
+        }
+    }
+    &__buttons {
+        @media(max-width: $r_desk_hd) {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
     }
 }
 .logo {
